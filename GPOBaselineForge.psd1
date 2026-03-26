@@ -9,7 +9,12 @@
     PowerShellVersion = '7.0'
 
     FunctionsToExport = @(
-        'Get-GPOBaselineForgeInfo'
+        'Import-BaselineGPO'
+        'Set-BaselineSeverity'
+        'New-CompliancePackage'
+        'Publish-CompliancePolicy'
+        'Invoke-BaselineForge'
+        'Get-BaselineInventory'
     )
 
     CmdletsToExport   = @()
