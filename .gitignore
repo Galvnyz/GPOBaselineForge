@@ -1,0 +1,14 @@
+# Build output
+out/
+
+# Test output
+TestResults/
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
