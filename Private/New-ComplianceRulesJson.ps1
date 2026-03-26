@@ -94,7 +94,7 @@ function New-ComplianceRulesJson {
             Operator           = $operator
             DataType           = $dataType
             Operand            = $operand
-            MoreInfoUrl        = ''
+            MoreInfoUrl        = 'https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines'
             RemediationStrings = @(
                 [ordered]@{
                     Language    = 'en_US'
