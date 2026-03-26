@@ -131,9 +131,69 @@
     },
     {
       "settingType": "Registry",
+      "pattern": "*\\WindowsFirewall\\*EnableFirewall*",
+      "severity": "High",
+      "comment": "Firewall enablement - core network defense control"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\WindowsFirewall\\*DefaultInboundAction*",
+      "severity": "High",
+      "comment": "Firewall default inbound block"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\WindowsFirewall\\*",
+      "severity": "High",
+      "comment": "Windows Firewall settings"
+    },
+    {
+      "settingType": "Registry",
       "pattern": "*\\Windows\\Windows Firewall\\*",
       "severity": "High",
       "comment": "Windows Firewall configuration"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\WTDS\\*",
+      "severity": "High",
+      "comment": "Windows Threat Defense System - endpoint threat protection"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Printers\\*RestrictDriverInstall*",
+      "severity": "High",
+      "comment": "PrintNightmare mitigation - driver install restriction"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Printers\\*",
+      "severity": "Medium",
+      "comment": "Printer security settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Print\\*",
+      "severity": "Medium",
+      "comment": "Print RPC authentication"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\DeviceInstall\\*",
+      "severity": "Medium",
+      "comment": "Device driver installation restrictions"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\EarlyLaunch\\*",
+      "severity": "High",
+      "comment": "Early Launch Anti-Malware boot protection"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\MrxSmb10\\*",
+      "severity": "High",
+      "comment": "SMBv1 client - should be disabled (EternalBlue vector)"
     },
     {
       "settingType": "Registry",

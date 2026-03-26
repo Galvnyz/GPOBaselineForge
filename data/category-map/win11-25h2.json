@@ -48,7 +48,35 @@
       "category": "Network Security"
     },
     {
+      "pattern": "*\\WindowsFirewall\\*",
+      "category": "Network Security"
+    },
+    {
       "pattern": "*\\Windows Firewall\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\NetworkProvider\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\Bowser\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\Network Connections\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\DNSClient\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\MrxSmb10\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\Netbt\\*",
       "category": "Network Security"
     },
     {
@@ -133,6 +161,10 @@
       "category": "Browser Security"
     },
     {
+      "pattern": "*\\Internet Settings\\*",
+      "category": "Browser Security"
+    },
+    {
       "pattern": "*\\CloudContent\\*",
       "category": "Privacy & Telemetry"
     },
@@ -151,6 +183,70 @@
     {
       "pattern": "*\\Power\\*",
       "category": "Power Management"
+    },
+    {
+      "pattern": "*\\Printers\\*",
+      "category": "Print Security"
+    },
+    {
+      "pattern": "*\\Print\\*",
+      "category": "Print Security"
+    },
+    {
+      "pattern": "*\\WTDS\\*",
+      "category": "Endpoint Protection"
+    },
+    {
+      "pattern": "*\\EarlyLaunch\\*",
+      "category": "Endpoint Protection"
+    },
+    {
+      "pattern": "*\\DeviceInstall\\*",
+      "category": "Device Security"
+    },
+    {
+      "pattern": "*\\PowerShell\\*",
+      "category": "Application Control"
+    },
+    {
+      "pattern": "*\\AxInstaller\\*",
+      "category": "Application Control"
+    },
+    {
+      "pattern": "*\\Sudo\\*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Windows Search\\*",
+      "category": "Privacy & Telemetry"
+    },
+    {
+      "pattern": "*\\WindowsInkWorkspace\\*",
+      "category": "Application Control"
+    },
+    {
+      "pattern": "*\\Winlogon\\*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Session Manager\\*",
+      "category": "OS Hardening"
+    },
+    {
+      "pattern": "*\\Policies\\CredUI\\*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Policies\\Ext\\*",
+      "category": "Browser Security"
+    },
+    {
+      "pattern": "*\\Windows\\System\\*",
+      "category": "OS Hardening"
+    },
+    {
+      "pattern": "*\\Rpc\\*",
+      "category": "Network Security"
     },
     {
       "settingType": "PrivilegeRight",
