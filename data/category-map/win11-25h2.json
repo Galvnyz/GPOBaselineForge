@@ -1,0 +1,171 @@
+{
+  "version": "1.0",
+  "baseline": "Windows 11 v25H2",
+  "defaultCategory": "General",
+  "rules": [
+    {
+      "pattern": "*\\Control\\Lsa\\*",
+      "category": "Credential Protection"
+    },
+    {
+      "pattern": "*\\CredSSP\\*",
+      "category": "Credential Protection"
+    },
+    {
+      "pattern": "*\\CredentialsDelegation\\*",
+      "category": "Credential Protection"
+    },
+    {
+      "pattern": "*\\DeviceGuard\\*",
+      "category": "Credential Protection"
+    },
+    {
+      "pattern": "*\\Kernel DMA Protection\\*",
+      "category": "Device Security"
+    },
+    {
+      "pattern": "*\\LanmanServer\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\LanmanWorkstation\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\Netlogon\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\LDAP*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\Tcpip*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\WcmSvc\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\Windows Firewall\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\WinRM\\*",
+      "category": "Network Security"
+    },
+    {
+      "pattern": "*\\EventLog\\*",
+      "category": "Audit Logging"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*",
+      "category": "Audit Logging"
+    },
+    {
+      "pattern": "*\\Installer\\*",
+      "category": "Application Control"
+    },
+    {
+      "pattern": "*\\Explorer\\*",
+      "category": "Application Control"
+    },
+    {
+      "pattern": "*\\AppPrivacy\\*",
+      "category": "Application Control"
+    },
+    {
+      "pattern": "*\\GameDVR\\*",
+      "category": "Application Control"
+    },
+    {
+      "pattern": "*BitLocker*",
+      "category": "Encryption"
+    },
+    {
+      "pattern": "*\\FVE\\*",
+      "category": "Encryption"
+    },
+    {
+      "pattern": "*\\Terminal Services\\*",
+      "category": "Remote Access"
+    },
+    {
+      "pattern": "*\\Policies\\System\\Consent*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Policies\\System\\Enable*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Policies\\System\\*Admin*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Policies\\LAPS\\*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Policies\\System\\*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Kerberos\\*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\KDC\\*",
+      "category": "Identity & Access"
+    },
+    {
+      "pattern": "*\\Windows Defender*",
+      "category": "Endpoint Protection"
+    },
+    {
+      "pattern": "*\\Biometrics\\*",
+      "category": "Endpoint Protection"
+    },
+    {
+      "pattern": "*\\Internet Explorer\\*",
+      "category": "Browser Security"
+    },
+    {
+      "pattern": "*\\CloudContent\\*",
+      "category": "Privacy & Telemetry"
+    },
+    {
+      "pattern": "*\\DataCollection\\*",
+      "category": "Privacy & Telemetry"
+    },
+    {
+      "pattern": "*\\PushNotifications\\*",
+      "category": "Privacy & Telemetry"
+    },
+    {
+      "pattern": "*\\Personalization\\*",
+      "category": "Privacy & Telemetry"
+    },
+    {
+      "pattern": "*\\Power\\*",
+      "category": "Power Management"
+    },
+    {
+      "settingType": "PrivilegeRight",
+      "pattern": "*",
+      "category": "Identity & Access"
+    },
+    {
+      "settingType": "SystemAccess",
+      "pattern": "*",
+      "category": "Identity & Access"
+    },
+    {
+      "settingType": "ServiceConfig",
+      "pattern": "*",
+      "category": "Service Hardening"
+    }
+  ]
+}

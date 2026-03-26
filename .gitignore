@@ -1,9 +1,11 @@
 # Build output
 out/
+output/
 
 # Test output
 TestResults/
 coverage/
+tests/_testoutput/
 
 # IDE
 .vscode/

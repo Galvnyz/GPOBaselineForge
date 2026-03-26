@@ -11,10 +11,29 @@ Describe 'GPOBaselineForge Module' {
         { Import-Module $modulePath -Force -ErrorAction Stop } | Should -Not -Throw
     }
 
-    It 'Exports expected functions' {
+    It 'Exports Import-BaselineGPO' {
         Import-Module $modulePath -Force
-        $exportedFunctions = (Get-Module 'GPOBaselineForge').ExportedFunctions.Keys
-        $exportedFunctions | Should -Contain 'Get-GPOBaselineForgeInfo'
+        (Get-Module 'GPOBaselineForge').ExportedFunctions.Keys | Should -Contain 'Import-BaselineGPO'
+    }
+
+    It 'Exports Set-BaselineSeverity' {
+        (Get-Module 'GPOBaselineForge').ExportedFunctions.Keys | Should -Contain 'Set-BaselineSeverity'
+    }
+
+    It 'Exports New-CompliancePackage' {
+        (Get-Module 'GPOBaselineForge').ExportedFunctions.Keys | Should -Contain 'New-CompliancePackage'
+    }
+
+    It 'Exports Publish-CompliancePolicy' {
+        (Get-Module 'GPOBaselineForge').ExportedFunctions.Keys | Should -Contain 'Publish-CompliancePolicy'
+    }
+
+    It 'Exports Invoke-BaselineForge' {
+        (Get-Module 'GPOBaselineForge').ExportedFunctions.Keys | Should -Contain 'Invoke-BaselineForge'
+    }
+
+    It 'Exports Get-BaselineInventory' {
+        (Get-Module 'GPOBaselineForge').ExportedFunctions.Keys | Should -Contain 'Get-BaselineInventory'
     }
 
     AfterAll {

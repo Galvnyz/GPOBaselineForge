@@ -1,0 +1,337 @@
+{
+  "version": "1.0",
+  "baseline": "Windows 11 v25H2",
+  "defaultSeverity": "Medium",
+  "rules": [
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Control\\Lsa\\RunAsPPL",
+      "severity": "Critical",
+      "comment": "LSASS protection - prevents credential dumping"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Control\\Lsa\\LmCompatibilityLevel",
+      "severity": "Critical",
+      "comment": "NTLM authentication level - prevents downgrade attacks"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Control\\Lsa\\RestrictAnonymousSAM",
+      "severity": "Critical",
+      "comment": "Prevents anonymous SAM enumeration"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Control\\Lsa\\RestrictAnonymous",
+      "severity": "Critical",
+      "comment": "Restricts anonymous access"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Control\\Lsa\\LimitBlankPasswordUse",
+      "severity": "Critical",
+      "comment": "Prevents blank password network logon"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Control\\Lsa\\SCENoApplyLegacyAuditPolicy",
+      "severity": "Critical",
+      "comment": "Forces advanced audit policy"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Control\\Lsa\\MSV1_0\\*",
+      "severity": "Critical",
+      "comment": "NTLM security settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Policies\\System\\LocalAccountTokenFilterPolicy",
+      "severity": "Critical",
+      "comment": "UAC remote token filtering - prevents pass-the-hash"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Policies\\System\\FilterAdministratorToken",
+      "severity": "Critical",
+      "comment": "UAC filtering for built-in admin"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Policies\\System\\ConsentPromptBehavior*",
+      "severity": "High",
+      "comment": "UAC consent prompt settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Policies\\System\\EnableLUA",
+      "severity": "Critical",
+      "comment": "UAC enabled - fundamental security control"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\DeviceGuard\\*",
+      "severity": "Critical",
+      "comment": "Credential Guard / Device Guard"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Kernel DMA Protection\\*",
+      "severity": "Critical",
+      "comment": "DMA attack protection"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\LanmanServer\\*RequireSecuritySignature*",
+      "severity": "High",
+      "comment": "SMB signing requirement"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\LanmanWorkstation\\*RequireSecuritySignature*",
+      "severity": "High",
+      "comment": "SMB client signing requirement"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\LanmanServer\\*",
+      "severity": "High",
+      "comment": "SMB server security settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\LanmanWorkstation\\*",
+      "severity": "High",
+      "comment": "SMB client security settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Netlogon\\Parameters\\*",
+      "severity": "High",
+      "comment": "Secure channel / domain trust settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\CredSSP\\Parameters\\*",
+      "severity": "High",
+      "comment": "CredSSP delegation protection"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\CredentialsDelegation\\*",
+      "severity": "High",
+      "comment": "Credential delegation restrictions"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Windows Defender*",
+      "severity": "High",
+      "comment": "Windows Defender settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Windows\\Windows Firewall\\*",
+      "severity": "High",
+      "comment": "Windows Firewall configuration"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Installer\\AlwaysInstallElevated",
+      "severity": "Critical",
+      "comment": "MSI privilege escalation vector"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Installer\\*",
+      "severity": "High",
+      "comment": "Windows Installer security"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\WinRM\\*",
+      "severity": "High",
+      "comment": "WinRM remote management security"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Terminal Services\\*",
+      "severity": "High",
+      "comment": "RDP security settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Policies\\LAPS\\*",
+      "severity": "High",
+      "comment": "Local admin password management"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\EventLog\\*MaxSize",
+      "severity": "Medium",
+      "comment": "Event log size configuration"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Explorer\\NoDriveTypeAutoRun",
+      "severity": "Medium",
+      "comment": "Autorun prevention"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Explorer\\NoAutorun",
+      "severity": "Medium",
+      "comment": "Autoplay prevention"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\CloudContent\\*",
+      "severity": "Low",
+      "comment": "Cloud content and consumer features"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Internet Explorer\\*",
+      "severity": "Low",
+      "comment": "Legacy IE settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Power\\PowerSettings\\*",
+      "severity": "Low",
+      "comment": "Power management settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\GameDVR\\*",
+      "severity": "Low",
+      "comment": "Game DVR / Xbox features"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\Personalization\\*",
+      "severity": "Low",
+      "comment": "Lock screen personalization"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*BitLocker*",
+      "severity": "High",
+      "comment": "BitLocker encryption settings"
+    },
+    {
+      "settingType": "Registry",
+      "pattern": "*\\FVE\\*",
+      "severity": "High",
+      "comment": "Full Volume Encryption (BitLocker)"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*Credential Validation*",
+      "severity": "Critical",
+      "comment": "Authentication audit - detects brute force"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*Logon*",
+      "severity": "High",
+      "comment": "Logon audit events"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*Account*",
+      "severity": "High",
+      "comment": "Account management audit"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*Privilege Use*",
+      "severity": "High",
+      "comment": "Privilege escalation detection"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*Policy Change*",
+      "severity": "High",
+      "comment": "Security policy tampering detection"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*System Integrity*",
+      "severity": "Critical",
+      "comment": "System integrity verification"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*Security State*",
+      "severity": "High",
+      "comment": "Security state change audit"
+    },
+    {
+      "settingType": "AuditPolicy",
+      "pattern": "*",
+      "severity": "Medium",
+      "comment": "Default audit policy severity"
+    },
+    {
+      "settingType": "PrivilegeRight",
+      "pattern": "SeDeny*",
+      "severity": "High",
+      "comment": "Deny privilege rights"
+    },
+    {
+      "settingType": "PrivilegeRight",
+      "pattern": "SeDebugPrivilege",
+      "severity": "Critical",
+      "comment": "Debug privilege - enables process injection"
+    },
+    {
+      "settingType": "PrivilegeRight",
+      "pattern": "SeTcbPrivilege",
+      "severity": "Critical",
+      "comment": "Act as part of the operating system"
+    },
+    {
+      "settingType": "PrivilegeRight",
+      "pattern": "SeCreateTokenPrivilege",
+      "severity": "Critical",
+      "comment": "Create security tokens"
+    },
+    {
+      "settingType": "PrivilegeRight",
+      "pattern": "Se*",
+      "severity": "High",
+      "comment": "Default privilege right severity"
+    },
+    {
+      "settingType": "SystemAccess",
+      "pattern": "LSAAnonymousNameLookup",
+      "severity": "Critical",
+      "comment": "Anonymous LSA name lookup"
+    },
+    {
+      "settingType": "SystemAccess",
+      "pattern": "*Password*",
+      "severity": "High",
+      "comment": "Password policy settings"
+    },
+    {
+      "settingType": "SystemAccess",
+      "pattern": "*Lockout*",
+      "severity": "High",
+      "comment": "Account lockout settings"
+    },
+    {
+      "settingType": "SystemAccess",
+      "pattern": "*",
+      "severity": "Medium",
+      "comment": "Default system access severity"
+    },
+    {
+      "settingType": "ServiceConfig",
+      "pattern": "*",
+      "severity": "Low",
+      "comment": "Service startup configuration"
+    }
+  ]
+}
