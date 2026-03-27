@@ -6,6 +6,9 @@ function Test-CompliancePackage {
         Runs the detection script, parses the output, and validates each setting
         against the rules JSON. Supports TypeCheck (datatype validation only) and
         FullEval (full operator/operand comparison) modes.
+
+        This is a local development/testing tool. The detection script is executed
+        directly — only run scripts you trust.
     .PARAMETER DetectionScriptPath
         Path to the detection script (.ps1).
     .PARAMETER RulesJsonPath
@@ -41,7 +44,15 @@ function Test-CompliancePackage {
         # Run the detection script and capture JSON output
         Write-Verbose "Running detection script: $DetectionScriptPath"
         $scriptOutput = & $DetectionScriptPath 2>$null
-        $detectionResults = $scriptOutput | ConvertFrom-Json -AsHashtable
+        if (-not $scriptOutput) {
+            throw "Detection script produced no output. Ensure the script at '$DetectionScriptPath' runs correctly."
+        }
+        try {
+            $detectionResults = $scriptOutput | ConvertFrom-Json -AsHashtable -ErrorAction Stop
+        }
+        catch {
+            throw "Detection script output is not valid JSON: $_"
+        }
 
         # Parse the rules JSON
         $rulesDoc = Get-Content -Path $RulesJsonPath -Raw | ConvertFrom-Json
@@ -81,6 +92,9 @@ function Test-CompliancePackage {
                 'String' {
                     $actualValue = [string]$actualValue
                 }
+                default {
+                    $actualValue = [string]$actualValue
+                }
             }
 
             if (-not $typePassed) {
@@ -112,6 +126,7 @@ function Test-CompliancePackage {
             $castOperand = switch ($expectedDataType) {
                 'Int64'  { [long]$operand }
                 'String' { [string]$operand }
+                default  { [string]$operand }
             }
 
             $compliant = switch ($operator) {
