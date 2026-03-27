@@ -14,7 +14,7 @@ Import-BaselineGPO → Set-BaselineSeverity → New-CompliancePackage → Publis
 ```
 
 - `GPOBaselineForge.psm1` — Root module (dot-sources Public/ and Private/)
-- `Public/` — 6 exported cmdlets (pipeline stages + orchestrator + utility)
+- `Public/` — 7 exported cmdlets (pipeline stages + orchestrator + utilities)
 - `Private/` — Parsers (Read-PolicyRulesXml), generators (New-DetectionScript, New-ComplianceRulesJson), helpers
 - `data/severity-map/` — Curated severity tier mappings per baseline version
 - `data/category-map/` — Functional category mappings per baseline version
@@ -37,6 +37,7 @@ Import-BaselineGPO → Set-BaselineSeverity → New-CompliancePackage → Publis
 | `Publish-CompliancePolicy` | Deploy to Intune via Graph API |
 | `Invoke-BaselineForge` | Full pipeline orchestrator |
 | `Get-BaselineInventory` | Reporting/inspection utility |
+| `Test-CompliancePackage` | Local compliance package validator |
 
 ## Conventions
 
