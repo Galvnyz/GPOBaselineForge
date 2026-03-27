@@ -15,6 +15,7 @@
         'Publish-CompliancePolicy'
         'Invoke-BaselineForge'
         'Get-BaselineInventory'
+        'Test-CompliancePackage'
     )
 
     CmdletsToExport   = @()
