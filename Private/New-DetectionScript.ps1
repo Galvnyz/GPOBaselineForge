@@ -52,10 +52,14 @@ function New-DetectionScript {
                     $escapedPath = $psPath.Replace("'", "''")
                     $escapedName = $s.ValueName.Replace("'", "''")
 
+                    # Use type-appropriate sentinel: -1 for numeric types (Int64 rules),
+                    # 'NOT_FOUND' for string types — prevents Intune error 65010
+                    $notFoundValue = if ($s.DataType -in 'REG_DWORD', 'REG_QWORD') { '-1' } else { "'NOT_FOUND'" }
+
                     $null = $sb.AppendLine("try {")
                     $null = $sb.AppendLine("    `$v = Get-ItemProperty -Path '$escapedPath' -Name '$escapedName' -ErrorAction Stop")
                     $null = $sb.AppendLine("    `$results['$($s.Id)'] = `$v.'$escapedName'")
-                    $null = $sb.AppendLine("} catch { `$results['$($s.Id)'] = 'NOT_FOUND' }")
+                    $null = $sb.AppendLine("} catch { `$results['$($s.Id)'] = $notFoundValue }")
                 }
             }
             'AuditPolicy' {
@@ -68,7 +72,7 @@ function New-DetectionScript {
                 foreach ($s in $group.Group) {
                     $subcat = $s.ValueName.Replace("'", "''")
                     $null = $sb.AppendLine("`$row = `$auditCsv | Where-Object { `$_.Subcategory -eq '$subcat' } | Select-Object -First 1")
-                    $null = $sb.AppendLine("if (`$row) { `$results['$($s.Id)'] = [int]`$row.'Setting Value' } else { `$results['$($s.Id)'] = 'NOT_FOUND' }")
+                    $null = $sb.AppendLine("if (`$row) { `$results['$($s.Id)'] = [int]`$row.'Setting Value' } else { `$results['$($s.Id)'] = -1 }")
                 }
             }
             'PrivilegeRight' {
@@ -99,8 +103,10 @@ function New-DetectionScript {
 
                 foreach ($s in $group.Group) {
                     $policyKey = $s.ValueName
+                    # Use -1 sentinel for numeric SystemAccess settings, 'NOT_FOUND' for string
+                    $notFoundValue = if ($s.ExpectedValue -is [int] -or $s.ExpectedValue -match '^\d+$') { '-1' } else { "'NOT_FOUND'" }
                     $null = $sb.AppendLine("`$line = `$seceditContent | Where-Object { `$_ -match '^$policyKey\s*=' } | Select-Object -First 1")
-                    $null = $sb.AppendLine("if (`$line -and `$line -match '=\s*(.*)') { `$results['$($s.Id)'] = `$Matches[1].Trim() } else { `$results['$($s.Id)'] = 'NOT_FOUND' }")
+                    $null = $sb.AppendLine("if (`$line -and `$line -match '=\s*(.*)') { `$results['$($s.Id)'] = `$Matches[1].Trim() } else { `$results['$($s.Id)'] = $notFoundValue }")
                 }
             }
             'ServiceConfig' {
@@ -109,7 +115,7 @@ function New-DetectionScript {
                     $null = $sb.AppendLine("try {")
                     $null = $sb.AppendLine("    `$svc = Get-Service -Name '$svcName' -ErrorAction Stop")
                     $null = $sb.AppendLine("    `$results['$($s.Id)'] = [int]`$svc.StartType")
-                    $null = $sb.AppendLine("} catch { `$results['$($s.Id)'] = 'NOT_FOUND' }")
+                    $null = $sb.AppendLine("} catch { `$results['$($s.Id)'] = -1 }")
                 }
             }
         }
