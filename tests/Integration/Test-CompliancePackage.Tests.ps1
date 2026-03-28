@@ -12,7 +12,7 @@ Describe 'Test-CompliancePackage Integration' {
     Context 'TypeCheck mode' {
         It 'Returns results for every rule in the package' -Skip:($null -ne $skipReason) {
             $settings = Import-BaselineGPO -Path $baselinePath | Set-BaselineSeverity
-            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'TypeCheckTest' -IncludeCategory 'Credential Protection'
+            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'TypeCheckTest' -IncludeCategory 'Local Security Authority'
 
             $results = $pkg | Test-CompliancePackage -Mode TypeCheck
 
@@ -21,7 +21,7 @@ Describe 'Test-CompliancePackage Integration' {
 
         It 'Produces zero TypeError results for generated packages' -Skip:($null -ne $skipReason) {
             $settings = Import-BaselineGPO -Path $baselinePath | Set-BaselineSeverity
-            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'TypeCheckTest2' -IncludeCategory 'Credential Protection'
+            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'TypeCheckTest2' -IncludeCategory 'Local Security Authority'
 
             $results = $pkg | Test-CompliancePackage -Mode TypeCheck
 
@@ -31,7 +31,7 @@ Describe 'Test-CompliancePackage Integration' {
 
         It 'Returns objects with expected properties' -Skip:($null -ne $skipReason) {
             $settings = Import-BaselineGPO -Path $baselinePath | Set-BaselineSeverity
-            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'TypeCheckTest3' -IncludeCategory 'Credential Protection'
+            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'TypeCheckTest3' -IncludeCategory 'Local Security Authority'
 
             $results = $pkg | Test-CompliancePackage -Mode TypeCheck
             $first = $results | Select-Object -First 1
@@ -48,7 +48,7 @@ Describe 'Test-CompliancePackage Integration' {
     Context 'FullEval mode' {
         It 'Returns Compliant, NotCompliant, or TypeError for each setting' -Skip:($null -ne $skipReason) {
             $settings = Import-BaselineGPO -Path $baselinePath | Set-BaselineSeverity
-            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'FullEvalTest' -IncludeCategory 'Credential Protection'
+            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'FullEvalTest' -IncludeCategory 'Local Security Authority'
 
             $results = $pkg | Test-CompliancePackage -Mode FullEval
 
@@ -61,7 +61,7 @@ Describe 'Test-CompliancePackage Integration' {
 
         It 'Accepts explicit paths instead of pipeline' -Skip:($null -ne $skipReason) {
             $settings = Import-BaselineGPO -Path $baselinePath | Set-BaselineSeverity
-            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'ExplicitPathTest' -IncludeCategory 'Credential Protection'
+            $pkg = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'ExplicitPathTest' -IncludeCategory 'Local Security Authority'
 
             $results = Test-CompliancePackage -DetectionScriptPath $pkg.DetectionScriptPath -RulesJsonPath $pkg.RulesJsonPath -Mode FullEval
 

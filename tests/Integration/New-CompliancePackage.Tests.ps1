@@ -49,7 +49,7 @@ Describe 'New-CompliancePackage Integration' {
     It 'Category filter produces smaller package' -Skip:($null -ne $skipReason) {
         $settings = Import-BaselineGPO -Path $baselinePath | Set-BaselineSeverity
         $full = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'FullTest'
-        $credOnly = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'CredTest' -IncludeCategory 'Credential Protection'
+        $credOnly = $settings | New-CompliancePackage -OutputPath $outputPath -Name 'CredTest' -IncludeCategory 'Local Security Authority'
 
         $credOnly.TotalSettings | Should -BeLessThan $full.TotalSettings
     }

@@ -1,267 +1,144 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "baseline": "Windows 11 v25H2",
-  "defaultCategory": "General",
+  "defaultCategory": "Administrative Templates - Other",
+  "comment": "Categories aligned to Intune security baseline portal sections. First match wins.",
   "rules": [
-    {
-      "pattern": "*\\Control\\Lsa\\*",
-      "category": "Credential Protection"
-    },
-    {
-      "pattern": "*\\CredSSP\\*",
-      "category": "Credential Protection"
-    },
-    {
-      "pattern": "*\\CredentialsDelegation\\*",
-      "category": "Credential Protection"
-    },
-    {
-      "pattern": "*\\DeviceGuard\\*",
-      "category": "Credential Protection"
-    },
-    {
-      "pattern": "*\\Kernel DMA Protection\\*",
-      "category": "Device Security"
-    },
-    {
-      "pattern": "*\\LanmanServer\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\LanmanWorkstation\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\Netlogon\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\LDAP*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\Tcpip*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\WcmSvc\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\WindowsFirewall\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\Windows Firewall\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\NetworkProvider\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\Bowser\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\Network Connections\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\DNSClient\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\MrxSmb10\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\Netbt\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\WinRM\\*",
-      "category": "Network Security"
-    },
-    {
-      "pattern": "*\\EventLog\\*",
-      "category": "Audit Logging"
-    },
-    {
-      "settingType": "AuditPolicy",
-      "pattern": "*",
-      "category": "Audit Logging"
-    },
-    {
-      "pattern": "*\\Installer\\*",
-      "category": "Application Control"
-    },
-    {
-      "pattern": "*\\Explorer\\*",
-      "category": "Application Control"
-    },
-    {
-      "pattern": "*\\AppPrivacy\\*",
-      "category": "Application Control"
-    },
-    {
-      "pattern": "*\\GameDVR\\*",
-      "category": "Application Control"
-    },
-    {
-      "pattern": "*BitLocker*",
-      "category": "Encryption"
-    },
-    {
-      "pattern": "*\\FVE\\*",
-      "category": "Encryption"
-    },
-    {
-      "pattern": "*\\Terminal Services\\*",
-      "category": "Remote Access"
-    },
-    {
-      "pattern": "*\\Policies\\System\\Consent*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Policies\\System\\Enable*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Policies\\System\\*Admin*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Policies\\LAPS\\*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Policies\\System\\*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Kerberos\\*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\KDC\\*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Windows Defender*",
-      "category": "Endpoint Protection"
-    },
-    {
-      "pattern": "*\\Biometrics\\*",
-      "category": "Endpoint Protection"
-    },
-    {
-      "pattern": "*\\Internet Explorer\\*",
-      "category": "Browser Security"
-    },
-    {
-      "pattern": "*\\Internet Settings\\*",
-      "category": "Browser Security"
-    },
-    {
-      "pattern": "*\\CloudContent\\*",
-      "category": "Privacy & Telemetry"
-    },
-    {
-      "pattern": "*\\DataCollection\\*",
-      "category": "Privacy & Telemetry"
-    },
-    {
-      "pattern": "*\\PushNotifications\\*",
-      "category": "Privacy & Telemetry"
-    },
-    {
-      "pattern": "*\\Personalization\\*",
-      "category": "Privacy & Telemetry"
-    },
-    {
-      "pattern": "*\\Power\\*",
-      "category": "Power Management"
-    },
-    {
-      "pattern": "*\\Printers\\*",
-      "category": "Print Security"
-    },
-    {
-      "pattern": "*\\Print\\*",
-      "category": "Print Security"
-    },
-    {
-      "pattern": "*\\WTDS\\*",
-      "category": "Endpoint Protection"
-    },
-    {
-      "pattern": "*\\EarlyLaunch\\*",
-      "category": "Endpoint Protection"
-    },
-    {
-      "pattern": "*\\DeviceInstall\\*",
-      "category": "Device Security"
-    },
-    {
-      "pattern": "*\\PowerShell\\*",
-      "category": "Application Control"
-    },
-    {
-      "pattern": "*\\AxInstaller\\*",
-      "category": "Application Control"
-    },
-    {
-      "pattern": "*\\Sudo\\*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Windows Search\\*",
-      "category": "Privacy & Telemetry"
-    },
-    {
-      "pattern": "*\\WindowsInkWorkspace\\*",
-      "category": "Application Control"
-    },
-    {
-      "pattern": "*\\Winlogon\\*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Session Manager\\*",
-      "category": "OS Hardening"
-    },
-    {
-      "pattern": "*\\Policies\\CredUI\\*",
-      "category": "Identity & Access"
-    },
-    {
-      "pattern": "*\\Policies\\Ext\\*",
-      "category": "Browser Security"
-    },
-    {
-      "pattern": "*\\Windows\\System\\*",
-      "category": "OS Hardening"
-    },
-    {
-      "pattern": "*\\Rpc\\*",
-      "category": "Network Security"
-    },
-    {
-      "settingType": "PrivilegeRight",
-      "pattern": "*",
-      "category": "Identity & Access"
-    },
-    {
-      "settingType": "SystemAccess",
-      "pattern": "*",
-      "category": "Identity & Access"
-    },
-    {
-      "settingType": "ServiceConfig",
-      "pattern": "*",
-      "category": "Service Hardening"
-    }
+    { "comment": "=== VALUE-LEVEL OVERRIDES (specific settings that override path-based rules) ===" },
+
+    { "comment": "--- MS Security Guide (Microsoft custom ADMX) ---" },
+    { "pattern": "*\\Services\\MrxSmb10\\*",         "category": "Administrative Templates - MS Security Guide", "comment": "SMB v1 client driver" },
+    { "pattern": "*\\Services\\LanmanServer\\Parameters\\SMB1", "category": "Administrative Templates - MS Security Guide", "comment": "SMB v1 server" },
+    { "pattern": "*\\Session Manager\\kernel\\*",    "category": "Administrative Templates - MS Security Guide", "comment": "SEHOP" },
+    { "pattern": "*\\Session Manager\\SafeDllSearchMode", "category": "Administrative Templates - MS Security Guide", "comment": "Safe DLL search mode" },
+    { "pattern": "*\\Session Manager\\ProtectionMode", "category": "Administrative Templates - MS Security Guide", "comment": "Base object protection" },
+
+    { "comment": "--- MSS (Legacy) - TCP/IP stack parameters ---" },
+    { "pattern": "*\\Services\\Tcpip\\Parameters\\*",  "category": "Administrative Templates - MSS (Legacy)" },
+    { "pattern": "*\\Services\\Tcpip6\\Parameters\\*", "category": "Administrative Templates - MSS (Legacy)" },
+    { "pattern": "*\\Services\\Netbt\\Parameters\\*",  "category": "Administrative Templates - MSS (Legacy)" },
+
+    { "comment": "=== TOP-LEVEL PORTAL SECTIONS ===" },
+
+    { "comment": "--- Auditing ---" },
+    { "settingType": "AuditPolicy", "pattern": "*", "category": "Auditing" },
+
+    { "comment": "--- Browser (Internet Explorer) ---" },
+    { "pattern": "*\\Internet Explorer\\*",  "category": "Browser" },
+    { "pattern": "*\\Internet Settings\\*",  "category": "Browser" },
+    { "pattern": "*\\Policies\\Ext\\*",      "category": "Browser" },
+
+    { "comment": "--- Defender ---" },
+    { "pattern": "*\\Windows Defender*",     "category": "Defender" },
+    { "pattern": "*\\EarlyLaunch\\*",        "category": "Defender" },
+
+    { "comment": "--- Device Guard ---" },
+    { "pattern": "*DeviceGuard*",            "category": "Device Guard" },
+
+    { "comment": "--- Device Lock (password/lockout policies) ---" },
+    { "settingType": "SystemAccess", "pattern": "*", "category": "Device Lock" },
+
+    { "comment": "--- Dma Guard ---" },
+    { "pattern": "*\\Kernel DMA Protection*", "category": "Dma Guard" },
+
+    { "comment": "--- Firewall ---" },
+    { "pattern": "*\\WindowsFirewall\\*",    "category": "Firewall" },
+    { "pattern": "*\\Windows Firewall\\*",   "category": "Firewall" },
+
+    { "comment": "--- Kerberos ---" },
+    { "pattern": "*\\Kerberos\\*",           "category": "Kerberos" },
+    { "pattern": "*\\KDC\\*",               "category": "Kerberos" },
+
+    { "comment": "--- LAPS ---" },
+    { "pattern": "*\\Policies\\LAPS\\*",     "category": "LAPS" },
+
+    { "comment": "--- Lanman Server ---" },
+    { "pattern": "*\\Microsoft\\Windows\\LanmanServer\\*", "category": "Lanman Server", "comment": "Policy-based LanmanServer" },
+    { "pattern": "*\\Services\\LanmanServer\\*", "category": "Lanman Server", "comment": "Service-based LanmanServer (except SMB1 override above)" },
+
+    { "comment": "--- Lanman Workstation ---" },
+    { "pattern": "*\\LanmanWorkstation\\*",  "category": "Lanman Workstation" },
+    { "pattern": "*\\Bowser\\*",             "category": "Lanman Workstation" },
+
+    { "comment": "--- Local Policies Security Options (UAC, interactive logon) ---" },
+    { "pattern": "*\\Policies\\System\\Consent*",   "category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\Enable*",    "category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\*Admin*",    "category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\Filter*",    "category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\Disable*",   "category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\Inactivity*","category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\LocalAccount*","category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\MSAOptional","category": "Local Policies Security Options" },
+    { "pattern": "*\\Policies\\System\\Audit\\*",   "category": "Local Policies Security Options" },
+    { "pattern": "*\\Winlogon\\*",                   "category": "Local Policies Security Options" },
+
+    { "comment": "--- Local Security Authority ---" },
+    { "pattern": "*\\Control\\Lsa\\*",               "category": "Local Security Authority" },
+    { "pattern": "*\\Services\\Netlogon\\*",         "category": "Local Security Authority" },
+    { "pattern": "*\\Services\\LDAP*",               "category": "Local Security Authority" },
+
+    { "comment": "--- Smart Screen ---" },
+    { "pattern": "*\\WTDS\\*",               "category": "Smart Screen" },
+
+    { "comment": "--- Sudo ---" },
+    { "pattern": "*\\Sudo\\*",              "category": "Sudo" },
+
+    { "comment": "--- System Services ---" },
+    { "settingType": "ServiceConfig", "pattern": "*", "category": "System Services" },
+
+    { "comment": "--- User Rights ---" },
+    { "settingType": "PrivilegeRight", "pattern": "*", "category": "User Rights" },
+
+    { "comment": "--- Wi-Fi Settings ---" },
+    { "pattern": "*\\WcmSvc\\*",             "category": "Wi-Fi Settings" },
+    { "pattern": "*wifinetworkmanager*",     "category": "Wi-Fi Settings" },
+
+    { "comment": "--- Windows Hello For Business ---" },
+    { "pattern": "*\\Biometrics\\*",         "category": "Windows Hello For Business" },
+
+    { "comment": "--- Windows Ink Workspace ---" },
+    { "pattern": "*\\WindowsInkWorkspace*",  "category": "Windows Ink Workspace" },
+
+    { "comment": "=== ADMINISTRATIVE TEMPLATES SUB-CATEGORIES ===" },
+
+    { "comment": "--- Control Panel ---" },
+    { "pattern": "*\\Personalization\\*",    "category": "Administrative Templates - Control Panel" },
+
+    { "comment": "--- Network ---" },
+    { "pattern": "*\\DNSClient\\*",          "category": "Administrative Templates - Network" },
+    { "pattern": "*\\Network Connections\\*","category": "Administrative Templates - Network" },
+    { "pattern": "*\\NetworkProvider\\*",    "category": "Administrative Templates - Network" },
+    { "pattern": "*NT\\Rpc\\*",              "category": "Administrative Templates - Network" },
+
+    { "comment": "--- Windows Components ---" },
+    { "pattern": "*\\FVE\\*",               "category": "Administrative Templates - BitLocker Drive Encryption" },
+    { "pattern": "*BitLocker*",             "category": "Administrative Templates - BitLocker Drive Encryption" },
+    { "pattern": "*\\CredUI\\*",            "category": "Administrative Templates - Credential Delegation" },
+    { "pattern": "*\\CredSSP\\*",           "category": "Administrative Templates - Credential Delegation" },
+    { "pattern": "*\\CredentialsDelegation\\*","category": "Administrative Templates - Credential Delegation" },
+    { "pattern": "*\\EventLog\\*",          "category": "Administrative Templates - Event Log Service" },
+    { "pattern": "*\\Explorer\\*",          "category": "Administrative Templates - File Explorer" },
+    { "pattern": "*\\Terminal Services\\*", "category": "Administrative Templates - Remote Desktop Services" },
+    { "pattern": "*\\Installer\\*",         "category": "Administrative Templates - Windows Installer" },
+    { "pattern": "*\\AxInstaller\\*",       "category": "Administrative Templates - Windows Installer" },
+    { "pattern": "*\\PowerShell\\*",        "category": "Administrative Templates - Windows PowerShell" },
+    { "pattern": "*\\WinRM\\*",             "category": "Administrative Templates - Windows Remote Management" },
+
+    { "comment": "--- Printers ---" },
+    { "pattern": "*\\Printers\\*",          "category": "Administrative Templates - Printers" },
+    { "pattern": "*\\Print\\*",             "category": "Administrative Templates - Printers" },
+
+    { "comment": "--- System ---" },
+    { "pattern": "*\\DeviceInstall\\*",     "category": "Administrative Templates - Device Installation" },
+    { "pattern": "*\\Power\\*",             "category": "Administrative Templates - Power" },
+    { "pattern": "*\\Windows\\System\\*",   "category": "Administrative Templates - System" },
+
+    { "comment": "--- Experience / Privacy / Search ---" },
+    { "pattern": "*\\CloudContent\\*",      "category": "Administrative Templates - Experience" },
+    { "pattern": "*\\GameDVR\\*",           "category": "Administrative Templates - Experience" },
+    { "pattern": "*\\Windows Search\\*",    "category": "Administrative Templates - Search" },
+    { "pattern": "*\\PushNotifications\\*", "category": "Administrative Templates - Privacy" },
+    { "pattern": "*\\DataCollection\\*",    "category": "Administrative Templates - Privacy" },
+    { "pattern": "*\\AppPrivacy\\*",        "category": "Administrative Templates - Privacy" }
   ]
 }
